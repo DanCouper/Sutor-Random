@@ -5,10 +5,11 @@ const Random = {
    * Given a seed, generates a random number between 0 and 1.
    * See: stackoverflow.com/questions/521295/javascript-random-seeds
    *
-   * @param  {Number} Value to use as a seed. Cannot be 0
-   *                  or multiple of Pi.
+   * @param  {Number}   Value to use as a seed. Should not be be 0
+   *                    or multiple of Pi.
    *
-   * @return {Number} A floating-point number between 0 and 1
+   * @return {Function} A function that, when called, returns a
+   *                    floating-point number between 0 and 1.
    */
   cSeeded(seed = Date.now()) {
     return () => {
@@ -20,7 +21,7 @@ const Random = {
   /**
    * Given a seed, generates a random number between 0 and 1.
    *
-   * @param  {Number} Value to use as a seed. Cannot be 0
+   * @param  {Number} Value to use as a seed. Should not be 0
    *                  or multiple of Pi.
    *
    * @return {Number} A floating-point number between 0 and 1
@@ -34,7 +35,7 @@ const Random = {
    *
    * @param  {Number} min  Minimum possible integer.
    * @param  {Number} max  Maximum possible integer.
-   * @param  {Number} seed Value to use as a seed. Cannot be 0
+   * @param  {Number} seed Value to use as a seed. Should not be 0
    *                       or multiple of Pi.
    *
    * @return {Number}      Integer between min and max inclusive.
@@ -47,7 +48,7 @@ const Random = {
    * Generates a random integer between zero and max inclusive.
    *
    * @param  {Number} max  Maximum possible integer.
-   * @param  {Number} seed Value to use as a seed. Cannot be 0
+   * @param  {Number} seed Value to use as a seed. Should not be be 0
    *                       or multiple of Pi.
    *
    * @return {Number}      Integer between 0 and max inclusive.
@@ -60,9 +61,11 @@ const Random = {
   /**
    * Alias for whichever shuffle algorithm is to be normally used.
    *
-   * @param  {Array} array
+   * @param  {Array}  array
+   * @param  {Number} seed  Value to use as a seed. Should not be be 0
+   *                        or multiple of Pi.
    *
-   * @return {Array} New shuffled version of original array
+   * @return {Array}        New shuffled version of original array
    */
   shuffle(array, seed = Date.now()) {
     return durstenfeldShuffle(array, seed)

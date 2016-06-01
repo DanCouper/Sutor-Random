@@ -1,0 +1,58 @@
+{
+  "name": "sutor-random",
+  "version": "1.0.0",
+  "description": "A seeded, naïve PRNG implementation.",
+  "main": "src/index.js",
+  "scripts": {
+    "ava": "ava",
+    "clean": "rm -rf coverage && rm -rf dist",
+    "compile": "babel src -d dist -s",
+    "coverage": "nyc --reporter=lcov npm run ava && nyc report",
+    "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/**/*.js",
+    "plato": "plato -d coverage/plato src/**/*.js",
+    "test": "npm run coveralls && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanCouper/es6-module-starter"
+  },
+  "keywords": [
+    "es6",
+    "es2015",
+    "babel",
+    "random",
+    "PRNG",
+    "seeded-PRNG"
+  ],
+  "author": "Daniel Couper <danielcouper81@googlemail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.15.1",
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.26",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "coveralls": "^2.11.6",
+    "eslint": "^2.11.1",
+    "nyc": "^6.4.4",
+    "plato": "github:deedubs/es6-plato"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "rules": {
+      "eol-last": [0],
+      "no-mixed-requires": [0],
+      "no-underscore-dangle": [0],
+      "quotes": [2, "single"],
+      "strict": 0
+    }
+  }
+}

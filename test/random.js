@@ -45,7 +45,7 @@ test('`Random.intUpTo` plucks a random value from zero—max inclusive', (t) => 
 })
 
 test('`Random.shuffle` takes an array and returns a new shuffled version', (t) => {
-  const input = Random.shuffle(input, 1)
+  const input = Random.shuffle([1,2,3,4,5,6], 1)
 
   t.deepEqual(input, [1,2,4,5,6,3])
 })

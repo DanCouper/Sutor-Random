@@ -1,5 +1,9 @@
 # Sutor-Random
 
+[![Build Status](https://semaphoreci.com/api/v1/dancouper/sutor-random/branches/master/badge.svg)](https://semaphoreci.com/dancouper/sutor-random)
+
+[![Coverage Status](https://coveralls.io/repos/github/DanCouper/Sutor-Random/badge.svg?branch=master)](https://coveralls.io/github/DanCouper/Sutor-Random?branch=master)
+
 A naïve seeded pseudo-random number generator for JS. This is mainly meant for testing purposes: the method used is [reportedly](http://stackoverflow.com/questions/521295/javascript-random-seeds) ~2-3 times slower than `Math.random()`.
 
 - Should allow for multiple independent generators (testing required).

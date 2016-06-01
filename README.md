@@ -7,7 +7,7 @@
 A naïve seeded pseudo-random number generator for JS. This is mainly meant for testing purposes: the method used is [reportedly](http://stackoverflow.com/questions/521295/javascript-random-seeds) ~2-3 times slower than `Math.random()`.
 
 - Should allow for multiple independent generators (testing required).
-- Array shuffle function included (uses what will be a slow implementation, leveraging `reduce`) (tests need to pass)
+- Array shuffle function included (uses what will be a slow implementation, leveraging `reduce`)
 
 
 ## Available functions:

@@ -1,8 +1,8 @@
 {
   "name": "sutor-random",
-  "version": "1.0.0",
-  "description": "A seeded, naïve PRNG implementation.",
-  "main": "src/index.js",
+  "version": "1.0.1",
+  "description": "A naïve seeded PRNG implementation.",
+  "main": "dist/random.js",
   "scripts": {
     "ava": "ava",
     "clean": "rm -rf coverage && rm -rf dist",
@@ -11,12 +11,16 @@
     "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/**/*.js",
     "plato": "plato -d coverage/plato src/**/*.js",
+    "prepublish": "npm run compile",
     "test": "npm run coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/DanCouper/es6-module-starter"
   },
+  "files": [
+    "dist/random.js"
+  ],
   "keywords": [
     "es6",
     "es2015",

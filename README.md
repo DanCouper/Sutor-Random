@@ -14,7 +14,7 @@ A naïve seeded pseudo-random number generator for JS. This is mainly meant for 
 
 ### `Random.seeded([seed])`
 
-Returns a random value between zero and one inclusive. Functionally identical to `Math.random()`. If the optional seed is passed, values become fixed.
+Returns a random value between zero and one inclusive. Functionally identical to `Math.random()`. If the optional seed is passed, values become predictable.
 
 ```
 > Random.seeded(1)
@@ -23,7 +23,7 @@ Returns a random value between zero and one inclusive. Functionally identical to
 
 ### `Random.intBetween(min, max[, seed])`
 
-Returns a random *integer* between min and max inclusive. If the optional seed is passed, values become fixed.
+Returns a random *integer* between min and max inclusive. If the optional seed is passed, values become predictable.
 
 ```
 > Random.intBetween(10, 20, 1)
@@ -32,7 +32,7 @@ Returns a random *integer* between min and max inclusive. If the optional seed i
 
 ### `Random.intUpTo(max[, seed])`
 
-Returns a random *integer* between zero and max inclusive. If the optional seed is passed, values become fixed.
+Returns a random *integer* between zero and max inclusive. If the optional seed is passed, values become predictable.
 
 ```
 > Random.intBetween(20, 1)
@@ -42,7 +42,7 @@ Returns a random *integer* between zero and max inclusive. If the optional seed 
 
 ### `Random.shuffle(array[, seed])`
 
-Shuffles an array randomly, using `Random.seeded()` + a privately-defined shuffle function. If the optional seed is passed, values become fixed.
+Shuffles an array randomly, using `Random.seeded()` + a privately-defined shuffle function. If the optional seed is passed, values become predictable.
 
 ```
 > Random.shuffle([1,2,3,4,5,6], 20)

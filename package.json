@@ -1,6 +1,6 @@
 {
   "name": "sutor-random",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A naïve seeded PRNG implementation.",
   "main": "dist/random.js",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DanCouper/es6-module-starter"
+    "url": "https://github.com/DanCouper/Sutor-Random"
   },
   "files": [
     "dist/random.js"

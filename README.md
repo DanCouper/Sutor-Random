@@ -10,6 +10,26 @@ A naïve seeded pseudo-random number generator for JS. This is mainly meant for 
 - Array shuffle function included (uses what will be a slow implementation, leveraging `reduce`)
 
 
+## Usage
+
+`npm install` into project.
+
+```
+// import all functions under the `Random` namespace:
+import Random from 'sutor-random'
+// use like:
+Random.seeded()
+Random.intBetween(10, 20)
+```
+
+```
+// import specific functions
+import { seeded, intBetween} from 'sutor-random'
+// use like:
+seeded()
+intBetween(10, 20)
+```
+
 ## Available functions:
 
 ### `Random.seeded([seed])`

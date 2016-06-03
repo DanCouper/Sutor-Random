@@ -1,4 +1,4 @@
-export default {
+const Random = {
   /**
    * Curried random number function. Allows multiple
    * independent random number generators.
@@ -59,23 +59,6 @@ export default {
   },
 
   /**
-   * Shuffle an array using a reducer version of Durstenfeld's algorithm.
-   * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
-   *
-   * @param  {Array} array
-   *
-   * @return {Array} New shuffled version of original array
-   */
-  _durstenfeldShuffle(array, seed = Date.now()) {
-    // Note the `array.slice()` - for immutability, a copy of the array
-    // is passed as an accumulator:
-    return array.reduce((shuffled, _, i) => {
-      const j = this.intUpTo(i, seed)
-      return mutableArrValueSwap(shuffled, i, j)
-    }, array.slice())
-  },
-
-  /**
    * Alias for whichever shuffle algorithm is to be normally used.
    *
    * @param  {Array}  array
@@ -85,8 +68,25 @@ export default {
    * @return {Array}        New shuffled version of original array
    */
   shuffle(array, seed = Date.now()) {
-    return this._durstenfeldShuffle(array, seed)
+    return durstenfeldShuffle(array, seed)
   },
+}
+
+/**
+ * Shuffle an array using a reducer version of Durstenfeld's algorithm.
+ * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+ *
+ * @param  {Array} array
+ *
+ * @return {Array} New shuffled version of original array
+ */
+function durstenfeldShuffle(array, seed = Date.now()) {
+  // Note the `array.slice()` - for immutability, a copy of the array
+  // is passed as an accumulator:
+  return array.reduce((shuffled, _, i) => {
+    const j = Random.intUpTo(i, seed)
+    return mutableArrValueSwap(shuffled, i, j)
+  }, array.slice())
 }
 
 /**
@@ -105,3 +105,9 @@ function mutableArrValueSwap(arr, i, j) {
   [arr[i], arr[j]] = [arr[j], arr[i]]
   return arr
 }
+
+/**
+ * NOTE: CJS `exports` used instead of ES6 `export`/`export default`.
+ *       until such time as this is not an issue.
+ */
+module.exports = Random
